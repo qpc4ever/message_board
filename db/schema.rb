@@ -12,10 +12,13 @@
 
 ActiveRecord::Schema.define(version: 2018_08_12_201404) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "comments", force: :cascade do |t|
     t.text "content"
-    t.integer "message_id"
-    t.integer "user_id"
+    t.bigint "message_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["message_id"], name: "index_comments_on_message_id"
@@ -47,4 +50,6 @@ ActiveRecord::Schema.define(version: 2018_08_12_201404) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "comments", "messages"
+  add_foreign_key "comments", "users"
 end
