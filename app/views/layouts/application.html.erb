@@ -9,29 +9,59 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <div class="navbar navbar-default">
-      <div class="container">
+  <body style="background-color:#0a8fd5;" >
+    <div class="navbar navbar-default" style="background-color:black;" >
+      <div class="container" > 
         <div class="navbar-header">
-          <%= link_to "Message Board", root_path, class: 'navbar-brand' %>
+          <%= link_to "Message Board", root_path, class: 'navbar-brand', style: 'color:#0a8fd5;' %>
         </div>
         <ul class="nav navbar-nav" >
-          <li><%= link_to "Sign Up", new_user_registration_path %></li>
+          <li><%= link_to "Sign Up", new_user_registration_path, style: 'color:#0a8fd5;' %></li>
           <% if user_signed_in? %>
-            <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+            <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, style: 'color:#0a8fd5;' %></li>
             <% else %>
-              <li><%= link_to "Log In", new_user_session_path %></li>
+              <li><%= link_to "Log In", new_user_session_path, style: 'color:#0a8fd5;' %></li>
           <% end %>
         </ul>
         <% if user_signed_in? %>
-          <p><%= link_to "New Message", new_message_path, class: 'navbar-right navbar-text navbar-link' %></p>
+          <p><%= link_to "New Message", new_message_path, class: 'navbar-right navbar-text navbar-link', style: 'color:#0a8fd5;' %></p>
         <% end %>
       </div>
     </div>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
-    <div class="container">
+    <div class="container" >
     <%= yield %>
     </div>
+    <div id="justpushtobottom"> 
+</div>
+
+<footer class="footer p-t-1 bg-dark" style="background-color:black;" >
+        <%# <div class="container">
+            <div class="pull-right">
+                <nav class="navbar" style="background:transparent; color: black;">
+                    <nav class="nav navbar-nav pull-xs-left">
+                        <a class="nav-item nav-link" href="#">Home</a>
+                        <a class="nav-item nav-link" href="#">About</a>
+                        <a class="nav-item nav-link" href="#">Download App</a>
+                        <a class="nav-item nav-link" href="#">Help</a>
+                    </nav>
+                </nav>
+            </div> %>
+          <center>
+            <a href="https://www.facebook.com/QPCTv-752840761589207/"><i class="fa fa-facebook-official fa-2x"></i></a>
+            <%# <a href="#"><i class="fa fa-pinterest-p fa-2x"></i></a>
+            <a href="#"><i class="fa fa-twitter fa-2x"></i></a> %>
+            <a href="https://github.com/qpc4ever"><i class="fa fa-github fa-2x"></i></a>
+            <a href="https://www.linkedin.com/in/chris-mcglynn-73614714a/"><i class="fa fa-linkedin fa-2x"></i></a>
+
+            <p class="h6">
+                
+                <a href="https://cmcglynn.a2hosted.com/" target="_blank">&copy 2018 QPC</a>
+            </p>
+            </center>
+        <%# </div> %>
+    </footer>
   </body>
 </html>
+
