@@ -33,6 +33,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-custom {
 	background-color: #fff;
+	border-radius: 25px;
 	color: #0a8fd5;
 	font-family: 'Muli', sans-serif; 
 	font-weight: 300;
@@ -95,6 +96,8 @@ h1, h2, h3, h4, h5, h6 {
 /* Message styles */
 
 .message {
+	border: 1px solid white;
+	border-radius: 25px;
 	box-sizing: border-box;
 	background-color: #383838;
 	margin-bottom: 25px;
@@ -115,6 +118,7 @@ h1, h2, h3, h4, h5, h6 {
 
 	.btn-custom {
 		margin-top: 20px;
+
 	}
 
 }
@@ -127,6 +131,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .message-show {
 	box-sizing: border-box;
+	border-radius: 25px;
+	margin-bottom: 30px;
 	background-color: #383838;
 	padding: 2.0em 1.5em;
 	border-bottom: 4px solid #0a8fd5;
@@ -156,6 +162,8 @@ h1, h2, h3, h4, h5, h6 {
 } 
 
 .footer {
+	border: 1px solid white;
+	border-radius: 1px;
     position: fixed;
     left: 0;
     bottom: 0;
