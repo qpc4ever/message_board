@@ -12,15 +12,17 @@
   </head>
 
   <body style="background-color:#0a8fd5;" >
-    <div class="navbar navbar-default" style="background-color:black;" >
+    <div class="navbar navbar-default " style="background-color:black;" >
       <div class="container" > 
         <div class="navbar-header">
           <%= link_to "Message Board", root_path, class: 'navbar-brand', style: 'color:#0a8fd5;' %>
         </div>
+        
         <ul class="nav navbar-nav" >
           <li><%= link_to "Sign Up", new_user_registration_path, style: 'color:#0a8fd5;' %></li>
           <% if user_signed_in? %>
             <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, style: 'color:#0a8fd5;' %></li>
+            <li ><%= link_to avatar_for(current_user, size: 20), current_user, style: 'padding-top:0px; padding-bottom:0px;' %></li>
             <% else %>
               <li><%= link_to "Log In", new_user_session_path, style: 'color:#0a8fd5;' %></li>
           <% end %>
@@ -32,21 +34,21 @@
     </div>
   <p class="notice" style="color:white; text-align:center"><%= notice %></p>
   <p class="alert"><%= alert %></p>
-    <div class="container" >
+    <div class="container" style="padding-bottom:60px" >
     <%= yield %>
     </div>
     
 
 <footer class="footer bg-dark" style="background-color:black;" >
   <div class="container">
-
-          <center style="padding-top: 20px;">
+         <div style="float:right;">
+          <center class="h6">
             <a href="https://www.facebook.com/QPCTv-752840761589207/"><i class="fa fa-facebook-official fa-2x"></i></a>
 
             <a href="https://github.com/qpc4ever"><i class="fa fa-github fa-2x"></i></a>
             <a href="https://www.linkedin.com/in/chris-mcglynn-73614714a/"><i class="fa fa-linkedin fa-2x"></i></a>
-
-            <p class="h6">
+         </div>
+            <p class="h4">
                 
                 <a href="https://cmcglynn.a2hosted.com/" target="_blank">&copy 2018 QPC</a>
             </p>

@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-2 message-show">
+    <div class="message">
+    <h1 class="message-title">Profile for <%= @user.email %></h1>
+</div>
+</div>
+
+<div class="col-md-2 col-md-offset-5 message-show">
+    <%= avatar_for(@user) %>
+    <%= link_to " Edit", edit_user_path(@user), class: 'btn-custom, fa fa-edit fa-2x', style: 'color:0a8fd5; float:right;' %>
+    </div>
+    </div>
+    </div>

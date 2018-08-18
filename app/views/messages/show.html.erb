@@ -1,21 +1,26 @@
 <div class="col-md-8 col-md-offset-2" style="margin-bottom:40px;">
 <div class="message-show">
 <h2 style="color:#0a8fd5;"><%= @message.title %></h2>
+<% if @message.image.attached? %>
+  <div class="img-fluid"><%= image_tag @message.image.variant(resize: "350x250") %></div>
+<% else %>
+  
+<% end %>   
 <p class="message-posted-by" style="color:red;">Posted by: <%= @message.user.email %> <%= time_ago_in_words(@message.created_at) %> ago</p>
 <p class="message-desc"><%= @message.description %></p>
 
 <h3 style="color:#0a8fd5;">Comments: </h3>
 <%= render @message.comments %>
 
-<h3 class="reply-to-message fa fa-comment fa-2x">Reply to Message</h3>
+<h3 class="reply-to-message fa fa-comment fa-2x"> Reply to Message</h3>
 <%= render 'comments/form' %>
 
 <div class="links btn-group">
-<%= link_to "Back", root_path, class: 'btn btn-default fa fa-arrow-left fa-2x' , style: 'background-color:black;' %>
+<%= link_to " Back", root_path, class: 'btn btn-default fa fa-arrow-left fa-2x' , style: 'background-color:black;' %>
 <% if user_signed_in? %>
 <% if @message.user_id == current_user.id %>
-  <%= link_to "Edit", edit_message_path(@message), class: 'btn btn-default fa fa-edit fa-2x', style: 'background-color:black;' %>
-  <%= link_to "Delete", message_path(@message), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-default fa fa-trash fa-2x', style: 'background-color:black;' %>
+  <%= link_to " Edit", edit_message_path(@message), class: 'btn btn-default fa fa-edit fa-2x', style: 'background-color:black;' %>
+  <%= link_to " Delete", message_path(@message), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-default fa fa-trash fa-2x', style: 'background-color:black;' %>
 <% end %>
 <% end %>
 </div>

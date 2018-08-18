@@ -1,0 +1,7 @@
+<h1>Edit Profile</h1>
+
+<%= simple_form_for @user do |f| %>
+  <%= f.input :email %>
+  <%= f.file_field :avatar %>
+  <%= f.button :submit, style: 'color:#0a8fd5; background-color:black', class: 'btn btn-default' %>
+<% end %>
