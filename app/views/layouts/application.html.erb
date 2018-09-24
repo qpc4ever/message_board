@@ -15,7 +15,7 @@
     <div class="navbar navbar-default " style="background-color:black;" >
       <div class="container" > 
         <div class="navbar-header">
-          <%= link_to "Message Board", root_path, class: 'navbar-brand', style: 'color:#0a8fd5;' %>
+          <%= link_to "Message Board", root_path, class: 'navbar-brand', style: 'color:red; font-family:Goudy Old Style;' %>
         </div>
         
         <ul class="nav navbar-nav" >
@@ -28,7 +28,7 @@
           <% end %>
         </ul>
         <% if user_signed_in? %>
-          <p><%= link_to "New Message", new_message_path, class: 'navbar-right navbar-text navbar-link', style: 'color:#0a8fd5;' %></p>
+          <p><%= link_to "New Message", new_message_path, class: 'navbar-right navbar-text navbar-link btn btn-default', style: 'color:#0a8fd5; font-family:Goudy Old Style; background-color:black; font-size:12px' %></p>
         <% end %>
       </div>
     </div>

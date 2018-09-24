@@ -1,18 +1,20 @@
 <div class="col-md-8 col-md-offset-2" style="margin-bottom:40px;">
 <div class="message-show">
 <h2 style="color:#0a8fd5;"><%= @message.title %></h2>
+<br>
 <% if @message.image.attached? %>
   <div class="img-fluid"><%= image_tag @message.image.variant(resize: "350x250") %></div>
 <% else %>
-  
 <% end %>   
+<br>
 <p class="message-posted-by" style="color:red;">Posted by: <%= @message.user.email %> <%= time_ago_in_words(@message.created_at) %> ago</p>
 <p class="message-desc"><%= @message.description %></p>
+<hr>
 
 <h3 style="color:#0a8fd5;">Comments: </h3>
 <%= render @message.comments %>
 
-<h3 class="reply-to-message fa fa-comment fa-2x"> Reply to Message</h3>
+<h3 class="reply-to-message fa fa-comment fa-2x" style="color:#0a8fd5;"> Reply to Message</h3>
 <%= render 'comments/form' %>
 
 <div class="links btn-group">
